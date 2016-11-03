@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/6.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/7.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/8.png?raw=true">
-<meta property="og:updated_time" content="2016-11-03T10:17:46.000Z">
+<meta property="og:updated_time" content="2016-11-03T10:20:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cocoapods升级">
 <meta name="twitter:description" content="swift3.0许多库对cocoapods的版本也有要求,这使得我们不得不升级cocoapods,由于手边项目较多,一直没升级cocoapods,只要是懒得改,这次有时间了,就把它给升了吧.">
@@ -331,8 +331,7 @@
 <h3 id="切换gem源"><a href="#切换gem源" class="headerlink" title="切换gem源"></a>切换gem源</h3><blockquote>
 <p>$ gem sources –remove <a href="https://rubygems.org/" target="_blank" rel="external">https://rubygems.org/</a><br>$ gem source -a <a href="https://gems.ruby-china.org/" target="_blank" rel="external">https://gems.ruby-china.org/</a></p>
 </blockquote>
-<p>查看是否切换成功</p>
-<blockquote>
+<h4 id="查看是否切换成功"><a href="#查看是否切换成功" class="headerlink" title="查看是否切换成功"></a>查看是否切换成功</h4><blockquote>
 <p>$ gem source -l</p>
 </blockquote>
 <p>当现实为下图则为成功<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/6.png?raw=true" alt="image"></p>
@@ -340,23 +339,19 @@
 <p>$ sudo gem install -n /usr/local/bin cocoapods</p>
 </blockquote>
 <p>这时候会出现一大堆输出等结束</p>
-<p>查看版本</p>
-<blockquote>
+<h4 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h4><blockquote>
 <p>$ pod –version</p>
 </blockquote>
 <p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/7.png?raw=true" alt="image"><br>欧 买噶的,居然没有更新</p>
-<p>不用紧张,可能是gem太老了,更新一下</p>
-<blockquote>
+<h4 id="不用紧张-可能是gem太老了-更新一下"><a href="#不用紧张-可能是gem太老了-更新一下" class="headerlink" title="不用紧张,可能是gem太老了,更新一下"></a>不用紧张,可能是gem太老了,更新一下</h4><blockquote>
 <p>$ gem update –system</p>
 </blockquote>
 <p>估计得等一会,然后又输出一大堆东西等结束</p>
-<p>再次执行</p>
-<blockquote>
+<h4 id="再次执行"><a href="#再次执行" class="headerlink" title="再次执行"></a>再次执行</h4><blockquote>
 <p>$ sudo gem install -n /usr/local/bin cocoapods<br>$ pod –version</p>
 </blockquote>
 <p>看到下面输出结果 ~~泪奔啊终于更新了<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/8.png?raw=true" alt="image"></p>
-<p>好了升级完成,接下来更新本地库,耐心等待即可</p>
-<blockquote>
+<h3 id="好了升级完成-接下来更新本地库-耐心等待即可"><a href="#好了升级完成-接下来更新本地库-耐心等待即可" class="headerlink" title="好了升级完成,接下来更新本地库,耐心等待即可"></a>好了升级完成,接下来更新本地库,耐心等待即可</h3><blockquote>
 <p>$ pod repo update </p>
 </blockquote>
 
@@ -566,7 +561,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换gem源"><span class="nav-number">1.</span> <span class="nav-text">切换gem源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级cocoapods"><span class="nav-number">2.</span> <span class="nav-text">升级cocoapods</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#切换gem源"><span class="nav-number">1.</span> <span class="nav-text">切换gem源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看是否切换成功"><span class="nav-number">1.1.</span> <span class="nav-text">查看是否切换成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级cocoapods"><span class="nav-number">2.</span> <span class="nav-text">升级cocoapods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看版本"><span class="nav-number">2.1.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不用紧张-可能是gem太老了-更新一下"><span class="nav-number">2.2.</span> <span class="nav-text">不用紧张,可能是gem太老了,更新一下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#再次执行"><span class="nav-number">2.3.</span> <span class="nav-text">再次执行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好了升级完成-接下来更新本地库-耐心等待即可"><span class="nav-number">3.</span> <span class="nav-text">好了升级完成,接下来更新本地库,耐心等待即可</span></a></li></ol></div>
             
           </div>
         </section>

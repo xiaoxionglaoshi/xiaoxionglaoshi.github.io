@@ -1,0 +1,724 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网址," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="开发应用最不缺的就是轮子,尤其是懒得写某个效果或者功能的时候都可以拿前人写好的三方库快速开发,总结一下新项目可能会用到的三方库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift常用三方库">
+<meta property="og:url" content="http://yoursite.com/2016/10/11/Swift常用三方库/index.html">
+<meta property="og:site_name" content="小熊老师">
+<meta property="og:description" content="开发应用最不缺的就是轮子,尤其是懒得写某个效果或者功能的时候都可以拿前人写好的三方库快速开发,总结一下新项目可能会用到的三方库">
+<meta property="og:updated_time" content="2016-10-31T07:04:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift常用三方库">
+<meta name="twitter:description" content="开发应用最不缺的就是轮子,尤其是懒得写某个效果或者功能的时候都可以拿前人写好的三方库快速开发,总结一下新项目可能会用到的三方库">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/11/Swift常用三方库/"/>
+
+
+  <title> Swift常用三方库 | 小熊老师 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小熊老师</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我是小熊老师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Swift常用三方库
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-11T10:00:00+08:00" content="2016-10-11">
+              2016-10-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Swift网址/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift网址</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/11/Swift常用三方库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/11/Swift常用三方库/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>开发应用最不缺的就是轮子,尤其是懒得写某个效果或者功能的时候都可以拿前人写好的三方库快速开发,总结一下新项目可能会用到的三方库<br><a id="more"></a></p>
+<h3 id="常用三方库"><a href="#常用三方库" class="headerlink" title="常用三方库"></a>常用三方库</h3><h4 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h4><blockquote>
+<p><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a> : 小星星最多的网络请求库,支持iOS9以上版本,与AFNetworking同源<br><a href="https://github.com/daltoniam/SwiftHTTPhttp://note.youdao.com/" target="_blank" rel="external">SwiftHTTP</a> : 又是一个好用的网络请求库,支持iOS8以上版本<br><a href="https://github.com/JustHTTP/Just" target="_blank" rel="external">Just</a> : 无意中发现的但是蛮好用的,支持iOS8以上版本</p>
+</blockquote>
+<h4 id="钥匙串"><a href="#钥匙串" class="headerlink" title="钥匙串"></a>钥匙串</h4><blockquote>
+<p><a href="https://github.com/kishikawakatsumi/KeychainAccess" target="_blank" rel="external">KeychainAccess</a> : 用这东西记录用户名密码之类的挺方便的,用法也比较简单,支持iOS8以上版本</p>
+</blockquote>
+<h4 id="图片加载"><a href="#图片加载" class="headerlink" title="图片加载"></a>图片加载</h4><blockquote>
+<p><a href="https://github.com/onevcat/Kingfisher" target="_blank" rel="external">Kingfisher</a> : 图片加载中星星最高的库,支出iOS8.0以上版本</p>
+</blockquote>
+<h4 id="JSON解析"><a href="#JSON解析" class="headerlink" title="JSON解析"></a>JSON解析</h4><blockquote>
+<p><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a> : JSON数据解析利器,不用手动层层解包了,支持iOS8以上版本</p>
+</blockquote>
+<h4 id="视图布局"><a href="#视图布局" class="headerlink" title="视图布局"></a>视图布局</h4><blockquote>
+<p><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a> : 代码布局首选,与Masonry同源,支持iOS8以上版本</p>
+</blockquote>
+<h4 id="指示器"><a href="#指示器" class="headerlink" title="指示器"></a>指示器</h4><blockquote>
+<p><a href="https://github.com/ninjaprox/NVActivityIndicatorView" target="_blank" rel="external">NVActivityIndicatorView</a> : 一大堆样式可以选 </p>
+</blockquote>
+<h4 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h4><blockquote>
+<p><a href="https://github.com/stephencelis/SQLite.swift" target="_blank" rel="external">SQLite.swift</a> : swift中星星最高的存储库,支持iOS7以上版本<br><a href="https://github.com/radex/SwiftyUserDefaults" target="_blank" rel="external">SwiftyUserDefaults</a> : 在swift中用NSUserDefaults存储数据</p>
+</blockquote>
+<h4 id="控制台打印"><a href="#控制台打印" class="headerlink" title="控制台打印"></a>控制台打印</h4><blockquote>
+<p><a href="https://github.com/DaveWoodCom/XCGLogger" target="_blank" rel="external">XCGLogger</a> : 花花绿绿五颜六色的打印结果最好看了,支持iOS8以上版本</p>
+</blockquote>
+<h4 id="相机相册图片"><a href="#相机相册图片" class="headerlink" title="相机相册图片"></a>相机相册图片</h4><blockquote>
+<p><a href="https://github.com/hyperoslo/ImagePicker" target="_blank" rel="external">ImagePicker</a> : 非常精致的一个图片选择器<br><a href="https://github.com/suzuki-0000/SKPhotoBrowser" target="_blank" rel="external">SKPhotoBrowser</a> : 图片查看库</p>
+</blockquote>
+<h4 id="扩展类"><a href="#扩展类" class="headerlink" title="扩展类"></a>扩展类</h4><blockquote>
+<p><a href="https://github.com/goktugyil/EZSwiftExtensions" target="_blank" rel="external">EZSwiftExtensions</a> : 整理的真心多</p>
+</blockquote>
+<h4 id="提示框"><a href="#提示框" class="headerlink" title="提示框"></a>提示框</h4><blockquote>
+<p><a href="https://github.com/codestergit/SweetAlert-iOS" target="_blank" rel="external">SweetAlert-iOS</a> : 带动画的弹框,调用也简单,效果不错,支持iOS7以上版本<br><a href="https://github.com/SwiftKickMobile/SwiftMessages" target="_blank" rel="external">SwiftMessages</a> : 消息提示,到处都可以显示的横条,效果非常不错</p>
+</blockquote>
+<h4 id="内购"><a href="#内购" class="headerlink" title="内购"></a>内购</h4><blockquote>
+<p><a href="httphttps://github.com/bizz84/SwiftyStoreKit" target="_blank" rel="external">SwiftyStoreKit</a> : 省心省时省力,内购封装</p>
+</blockquote>
+<h4 id="皮肤主题"><a href="#皮肤主题" class="headerlink" title="皮肤主题"></a>皮肤主题</h4><blockquote>
+<p><a href="https://github.com/jiecao-fm/SwiftTheme" target="_blank" rel="external">SwiftTheme</a> :  主题/换肤, 夜间模式,支持iOS7以上版本</p>
+</blockquote>
+<h4 id="二维码扫描"><a href="#二维码扫描" class="headerlink" title="二维码扫描"></a>二维码扫描</h4><blockquote>
+<p><a href="https://github.com/zhanghongdou/QRCodeReaderView-Swift" target="_blank" rel="external">QRCodeReaderView-Swift</a> : 基于swift语言实现二维码条形码扫描,本地相册二维码识别</p>
+</blockquote>
+<h4 id="指纹和手势密码"><a href="#指纹和手势密码" class="headerlink" title="指纹和手势密码"></a>指纹和手势密码</h4><blockquote>
+<p><a href="https://github.com/bugaoshuni/TouchIDAndGestureLock" target="_blank" rel="external">TouchIDAndGestureLock</a> : 指纹解锁、手势解锁</p>
+</blockquote>
+<h4 id="通讯录"><a href="#通讯录" class="headerlink" title="通讯录"></a>通讯录</h4><blockquote>
+<p><a href="https://github.com/jkpang/PPGetAddressBookSwift" target="_blank" rel="external">PPGetAddressBookSwift</a> : 获取通讯录并排序</p>
+</blockquote>
+<h4 id="提示框-1"><a href="#提示框-1" class="headerlink" title="提示框"></a>提示框</h4><blockquote>
+<p><a href="https://github.com/codestergit/SweetAlert-iOS" target="_blank" rel="external">SweetAlert-iOS</a> : 动画提示框</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网址/" rel="tag">#网址</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/10/随机数/" rel="next" title="随机数">
+                <i class="fa fa-chevron-left"></i> 随机数
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/12/排序算法-Swift/" rel="prev" title="排序算法 Swift">
+                排序算法 Swift <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/11/Swift常用三方库/"
+     data-title="Swift常用三方库"
+     data-content=""
+     data-url="http://yoursite.com/2016/10/11/Swift常用三方库/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/11/Swift常用三方库/"
+           data-title="Swift常用三方库" data-url="http://yoursite.com/2016/10/11/Swift常用三方库/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="王建能" />
+          <p class="site-author-name" itemprop="name">王建能</p>
+          <p class="site-description motion-element" itemprop="description">这是一个神奇的网站</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiaoxionglaoshi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.google.com/" title="Google" target="_blank">Google</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://developer.apple.com/" title="Apple Developer" target="_blank">Apple Developer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://itunesconnect.apple.com/" title="iTunes Connect" target="_blank">iTunes Connect</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用三方库"><span class="nav-number">1.</span> <span class="nav-text">常用三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络请求"><span class="nav-number">1.1.</span> <span class="nav-text">网络请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#钥匙串"><span class="nav-number">1.2.</span> <span class="nav-text">钥匙串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片加载"><span class="nav-number">1.3.</span> <span class="nav-text">图片加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSON解析"><span class="nav-number">1.4.</span> <span class="nav-text">JSON解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图布局"><span class="nav-number">1.5.</span> <span class="nav-text">视图布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指示器"><span class="nav-number">1.6.</span> <span class="nav-text">指示器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地存储"><span class="nav-number">1.7.</span> <span class="nav-text">本地存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制台打印"><span class="nav-number">1.8.</span> <span class="nav-text">控制台打印</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相机相册图片"><span class="nav-number">1.9.</span> <span class="nav-text">相机相册图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展类"><span class="nav-number">1.10.</span> <span class="nav-text">扩展类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示框"><span class="nav-number">1.11.</span> <span class="nav-text">提示框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内购"><span class="nav-number">1.12.</span> <span class="nav-text">内购</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#皮肤主题"><span class="nav-number">1.13.</span> <span class="nav-text">皮肤主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二维码扫描"><span class="nav-number">1.14.</span> <span class="nav-text">二维码扫描</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指纹和手势密码"><span class="nav-number">1.15.</span> <span class="nav-text">指纹和手势密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通讯录"><span class="nav-number">1.16.</span> <span class="nav-text">通讯录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示框-1"><span class="nav-number">1.17.</span> <span class="nav-text">提示框</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" align="center"> 
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王建能</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaoxionglaoshi"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

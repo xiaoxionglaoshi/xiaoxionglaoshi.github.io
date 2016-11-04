@@ -93,7 +93,7 @@
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/6.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/7.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/8.png?raw=true">
-<meta property="og:updated_time" content="2016-11-03T10:20:58.000Z">
+<meta property="og:updated_time" content="2016-11-04T01:00:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cocoapods升级">
 <meta name="twitter:description" content="swift3.0许多库对cocoapods的版本也有要求,这使得我们不得不升级cocoapods,由于手边项目较多,一直没升级cocoapods,只要是懒得改,这次有时间了,就把它给升了吧.">
@@ -336,7 +336,7 @@
 </blockquote>
 <p>当现实为下图则为成功<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/6.png?raw=true" alt="image"></p>
 <h3 id="升级cocoapods"><a href="#升级cocoapods" class="headerlink" title="升级cocoapods"></a>升级cocoapods</h3><blockquote>
-<p>$ sudo gem install -n /usr/local/bin cocoapods</p>
+<p>$ sudo gem install -n /usr/local/bin cocoapods<br>或者试试下面的命令,这是更新推荐提示的命令<br>$ sudo gem install cocoapods –pre</p>
 </blockquote>
 <p>这时候会出现一大堆输出等结束</p>
 <h4 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h4><blockquote>
@@ -354,6 +354,11 @@
 <h3 id="好了升级完成-接下来更新本地库-耐心等待即可"><a href="#好了升级完成-接下来更新本地库-耐心等待即可" class="headerlink" title="好了升级完成,接下来更新本地库,耐心等待即可"></a>好了升级完成,接下来更新本地库,耐心等待即可</h3><blockquote>
 <p>$ pod repo update </p>
 </blockquote>
+<p>更新完之后可能会出现</p>
+<blockquote>
+<p>CocoaPods 1.2.0.beta.1 is available.</p>
+</blockquote>
+<p>这是发现还有新版本,不过是beta版本,要不要再升级,如果要就按照它提示的命令执行,否则就不用管它,beta一般就不升了,毕竟不是正式版,难免会有一些BUG</p>
 
       
     </div>

@@ -97,7 +97,7 @@
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/13.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/14.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/15.png?raw=true">
-<meta property="og:updated_time" content="2016-11-04T02:09:24.000Z">
+<meta property="og:updated_time" content="2016-11-04T02:14:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cocoapods使用">
 <meta name="twitter:description" content="最为iOS开发的一般都知道cocoapods,在管理三方库方面还是减少不少麻烦的,之前一直用的老版本的cocoapods,升级到1.0以上版本后,写法有所改变,再总结一下用法">
@@ -345,12 +345,12 @@
 <p>$ vim Podfile<br>或者<br>$ open -e podfile</p>
 </blockquote>
 <p>更推荐后者,vim编辑真心难用,需要一行一样的跳<br>打开后我们会看到里面已经为我们创建了不少东西,省的自己写了<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/10.png?raw=true" alt="image"></p>
-<p>把碍眼的注释都删掉<br>如果你在创建应用的时候勾选了Tests和UITest,则会同事创建出他们对应的target,我们暂时不用,也直接删了就行了,什么时候用到什么时候在加上<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/11.png?raw=true" alt="image"><br>这就顺眼多了</p>
+<p>把碍眼的注释都删掉<br>如果你在创建应用的时候勾选了Tests和UITest,则会同时创建出他们对应的target,我们暂时不用,也直接删了就行了,什么时候用到什么时候在加上<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/11.png?raw=true" alt="image"><br>这就顺眼多了</p>
 <h3 id="添加需要的三方库"><a href="#添加需要的三方库" class="headerlink" title="添加需要的三方库"></a>添加需要的三方库</h3><p>以添加Alamofire为例</p>
 <h4 id="首先查看Alamofire目前的版本-有三种"><a href="#首先查看Alamofire目前的版本-有三种" class="headerlink" title="首先查看Alamofire目前的版本,有三种"></a>首先查看Alamofire目前的版本,有三种</h4><blockquote>
-<p>去<a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">github</a>上看看文档介绍<br>去<a href="https://cocoapods.org" target="_blank" rel="external">Cocoapods官网</a>上查查文档<br>在终端上通过命令查询 $ pod search alamofire</p>
+<p>1.去<a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">github</a>上看看文档介绍<br>2.去<a href="https://cocoapods.org" target="_blank" rel="external">Cocoapods官网</a>上查查文档<br>3.在终端上通过命令查询 $ pod search alamofire</p>
 </blockquote>
-<p>前两者都能查到最新版本,第三种有个能查不到最新的,需要跟新本地库</p>
+<p>前两者都能查到最新版本,第三种有可能查不到最新的,需要更新本地库</p>
 <blockquote>
 <p>$ pod repo update</p>
 </blockquote>
@@ -362,6 +362,10 @@
 <p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/13.png?raw=true" alt="image"></p>
 <p>这时候打开项目文件,会发现多出了几个文件<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/14.png?raw=true" alt="image"></p>
 <p>打开.workspace文件即可看到多处了一Pods工程<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/15.png?raw=true" alt="image"></p>
+<p>以后要是需要更新三方库只需要执行命令</p>
+<blockquote>
+<p>$ pod update</p>
+</blockquote>
 <p>到这里cocoapods使用就结束了</p>
 <p>接下来项目要是需要用到Pods里的三方库只需要引用头文件就能用了</p>
 

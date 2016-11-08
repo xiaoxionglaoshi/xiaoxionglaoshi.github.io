@@ -19,7 +19,7 @@
     <entry>
       <title><![CDATA[cocoapods升级]]></title>
       <url>%2F2016%2F10%2F20%2Fcocoapods%E5%8D%87%E7%BA%A7%2F</url>
-      <content type="text"><![CDATA[swift3.0许多库对cocoapods的版本也有要求,这使得我们不得不升级cocoapods,由于手边项目较多,一直没升级cocoapods,十几个项目,主要是懒得改,这次有时间了,就把它给升了吧. 切换gem源 $ gem sources –remove https://rubygems.org/$ gem source -a https://gems.ruby-china.org/ 查看是否切换成功 $ gem source -l 当现实为下图则为成功 升级cocoapods $ sudo gem install -n /usr/local/bin cocoapods或者试试下面的命令,这是更新推荐提示的命令$ sudo gem install cocoapods –pre 这时候会出现一大堆输出等结束 查看版本 $ pod –version 欧 买噶的,居然没有更新 不用紧张,可能是gem太老了,更新一下 $ gem update –system 估计得等一会,然后又输出一大堆东西等结束 再次执行 $ sudo gem install -n /usr/local/bin cocoapods$ pod –version 看到下面输出结果 ~~泪奔啊终于更新了 好了升级完成,接下来更新本地库,耐心等待即可 $ pod repo update 更新完之后可能会出现 CocoaPods 1.2.0.beta.1 is available. 这是发现还有新版本,不过是beta版本,要不要再升级,如果要就按照它提示的命令执行,否则就不用管它,beta一般就不升了,毕竟不是正式版,难免会有一些BUG]]></content>
+      <content type="text"><![CDATA[swift3.0许多库对cocoapods的版本也有要求,这使得我们不得不升级cocoapods,由于手边项目较多,一直没升级cocoapods,主要是懒得改,这次有时间了,就把它给升了吧. 切换gem源 $ gem sources –remove https://rubygems.org/$ gem source -a https://gems.ruby-china.org/ 查看是否切换成功 $ gem source -l 当现实为下图则为成功 升级cocoapods $ sudo gem install -n /usr/local/bin cocoapods或者试试下面的命令,这是更新推荐提示的命令$ sudo gem install cocoapods –pre 这时候会出现一大堆输出等结束 查看版本 $ pod –version 欧 买噶的,居然没有更新 不用紧张,可能是gem太老了,更新一下 $ gem update –system 估计得等一会,然后又输出一大堆东西等结束 再次执行 $ sudo gem install -n /usr/local/bin cocoapods$ pod –version 看到下面输出结果 ~~泪奔啊终于更新了 好了升级完成,接下来更新本地库,耐心等待即可 $ pod repo update 更新完之后可能会出现 CocoaPods 1.2.0.beta.1 is available. 这是发现还有新版本,不过是beta版本,要不要再升级,如果要就按照它提示的命令执行,否则就不用管它,beta一般就不升了,毕竟不是正式版,难免会有一些BUG]]></content>
     </entry>
 
     

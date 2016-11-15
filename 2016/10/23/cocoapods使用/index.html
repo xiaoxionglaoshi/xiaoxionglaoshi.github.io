@@ -1,0 +1,876 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="cocoapods," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="最为iOS开发的一般都知道cocoapods,在管理三方库方面还是减少不少麻烦的,之前一直用的老版本的cocoapods,升级到1.0以上版本后,写法有所改变,再总结一下用法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cocoapods使用">
+<meta property="og:url" content="http://yoursite.com/2016/10/23/cocoapods使用/index.html">
+<meta property="og:site_name" content="小熊老师">
+<meta property="og:description" content="最为iOS开发的一般都知道cocoapods,在管理三方库方面还是减少不少麻烦的,之前一直用的老版本的cocoapods,升级到1.0以上版本后,写法有所改变,再总结一下用法">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/9.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/10.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/11.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/12.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/13.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/14.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/15.png?raw=true">
+<meta property="og:updated_time" content="2016-11-15T09:21:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cocoapods使用">
+<meta name="twitter:description" content="最为iOS开发的一般都知道cocoapods,在管理三方库方面还是减少不少麻烦的,之前一直用的老版本的cocoapods,升级到1.0以上版本后,写法有所改变,再总结一下用法">
+<meta name="twitter:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/9.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/23/cocoapods使用/"/>
+
+
+  <title> cocoapods使用 | 小熊老师 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小熊老师</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">我是小熊老师</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                cocoapods使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-23T09:24:34+08:00" content="2016-10-23">
+              2016-10-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/cocoapods使用/" itemprop="url" rel="index">
+                    <span itemprop="name">cocoapods使用</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/23/cocoapods使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/23/cocoapods使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最为iOS开发的一般都知道cocoapods,在管理三方库方面还是减少不少麻烦的,之前一直用的老版本的cocoapods,升级到1.0以上版本后,写法有所改变,再总结一下用法</p>
+<a id="more"></a>
+<h3 id="创建项目CocoapodsDemo"><a href="#创建项目CocoapodsDemo" class="headerlink" title="创建项目CocoapodsDemo"></a>创建项目CocoapodsDemo</h3><blockquote>
+<p>用Xcode创建CocoapodsDemo项目,并设置支持的最低版本</p>
+</blockquote>
+<h3 id="添加Podfile文件"><a href="#添加Podfile文件" class="headerlink" title="添加Podfile文件"></a>添加Podfile文件</h3><h4 id="cd到刚创建的项目的根目录下"><a href="#cd到刚创建的项目的根目录下" class="headerlink" title="cd到刚创建的项目的根目录下"></a>cd到刚创建的项目的根目录下</h4><h4 id="创建Podfile"><a href="#创建Podfile" class="headerlink" title="创建Podfile"></a>创建Podfile</h4><blockquote>
+<p>$ pod init</p>
+</blockquote>
+<p>这时候查看项目文件夹会发现多出一个Podfile文件<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/9.png?raw=true" alt="image"></p>
+<h4 id="打开该文件"><a href="#打开该文件" class="headerlink" title="打开该文件"></a>打开该文件</h4><p>终端执行命令</p>
+<blockquote>
+<p>$ vim Podfile<br>或者<br>$ open -e podfile</p>
+</blockquote>
+<p>更推荐后者,vim编辑真心难用,需要一行一样的跳<br>打开后我们会看到里面已经为我们创建了不少东西,省的自己写了<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/10.png?raw=true" alt="image"></p>
+<p>把碍眼的注释都删掉<br>如果你在创建应用的时候勾选了Tests和UITest,则会同时创建出他们对应的target,我们暂时不用,也直接删了就行了,什么时候用到什么时候在加上<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/11.png?raw=true" alt="image"><br>这就顺眼多了</p>
+<h3 id="添加需要的三方库"><a href="#添加需要的三方库" class="headerlink" title="添加需要的三方库"></a>添加需要的三方库</h3><p>以添加Alamofire为例</p>
+<h4 id="首先查看Alamofire目前的版本-有三种"><a href="#首先查看Alamofire目前的版本-有三种" class="headerlink" title="首先查看Alamofire目前的版本,有三种"></a>首先查看Alamofire目前的版本,有三种</h4><blockquote>
+<p>1.去<a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">github</a>上看看文档介绍<br>2.去<a href="https://cocoapods.org" target="_blank" rel="external">Cocoapods官网</a>上查查文档<br>3.在终端上通过命令查询 $ pod search alamofire</p>
+</blockquote>
+<p>前两者都能查到最新版本,第三种有可能查不到最新的,需要更新本地库</p>
+<blockquote>
+<p>$ pod repo update</p>
+</blockquote>
+<p>接下来按照查询到的方法在Podfile中书写<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/12.png?raw=true" alt="image"></p>
+<p>关闭编辑页面</p>
+<h4 id="拉取三方库资源"><a href="#拉取三方库资源" class="headerlink" title="拉取三方库资源"></a>拉取三方库资源</h4><blockquote>
+<p>$ pod install</p>
+</blockquote>
+<p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/13.png?raw=true" alt="image"></p>
+<p>这时候打开项目文件,会发现多出了几个文件<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/14.png?raw=true" alt="image"></p>
+<p>打开.workspace文件即可看到多处了一Pods工程<br><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/15.png?raw=true" alt="image"></p>
+<p>以后要是需要更新三方库只需要执行命令</p>
+<blockquote>
+<p>$ pod update</p>
+</blockquote>
+<p>到这里cocoapods使用就结束了</p>
+<p>接下来项目要是需要用到Pods里的三方库只需要引用头文件就能用了</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/cocoapods/" rel="tag">#cocoapods</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/cocoapods升级/" rel="next" title="cocoapods升级">
+                <i class="fa fa-chevron-left"></i> cocoapods升级
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/25/Swift常用三方库/" rel="prev" title="Swift常用三方库">
+                Swift常用三方库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/23/cocoapods使用/"
+     data-title="cocoapods使用"
+     data-content=""
+     data-url="http://yoursite.com/2016/10/23/cocoapods使用/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/23/cocoapods使用/"
+           data-title="cocoapods使用" data-url="http://yoursite.com/2016/10/23/cocoapods使用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="王建能" />
+          <p class="site-author-name" itemprop="name">王建能</p>
+          <p class="site-description motion-element" itemprop="description">这是一个神奇的网站</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiaoxionglaoshi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.google.com/" title="Google" target="_blank">Google</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://developer.apple.com/" title="Apple Developer" target="_blank">Apple Developer</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://itunesconnect.apple.com/" title="iTunes Connect" target="_blank">iTunes Connect</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建项目CocoapodsDemo"><span class="nav-number">1.</span> <span class="nav-text">创建项目CocoapodsDemo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加Podfile文件"><span class="nav-number">2.</span> <span class="nav-text">添加Podfile文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cd到刚创建的项目的根目录下"><span class="nav-number">2.1.</span> <span class="nav-text">cd到刚创建的项目的根目录下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Podfile"><span class="nav-number">2.2.</span> <span class="nav-text">创建Podfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开该文件"><span class="nav-number">2.3.</span> <span class="nav-text">打开该文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加需要的三方库"><span class="nav-number">3.</span> <span class="nav-text">添加需要的三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#首先查看Alamofire目前的版本-有三种"><span class="nav-number">3.1.</span> <span class="nav-text">首先查看Alamofire目前的版本,有三种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拉取三方库资源"><span class="nav-number">3.2.</span> <span class="nav-text">拉取三方库资源</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" align="center"> 
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王建能</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xiaoxionglaoshi"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="指纹解锁," />
+  <meta name="keywords" content="xiaoxionglaoshi, iOS" />
 
 
 
@@ -84,19 +84,18 @@
 
 
 
-<meta name="description" content="指纹识别是从iPhone 5s开始支持的,在日常使用中,可以用来解锁手机和软件内部验证等用途,这里介绍的是在软件内部的使用,现在市面上应用的指纹解锁的应用还是很多的,尤其以金钱交易类的应用作为快捷登录和支付来使用,例如支付宝,招商银行等.
-这里具体讲解一下如何使用指纹识别技术解锁应用">
+<meta name="description" content="SpeechRecognition简介iOS10引入了一个新的API: Speech.framework,语音识别功能,可以执行语音转录实时和记录音频.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指纹解锁">
-<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/10/05/指纹解锁/index.html">
+<meta property="og:title" content="iOS10新特性之语音识别">
+<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/11/15/iOS10新特性之语音识别/index.html">
 <meta property="og:site_name" content="小熊老师">
-<meta property="og:description" content="指纹识别是从iPhone 5s开始支持的,在日常使用中,可以用来解锁手机和软件内部验证等用途,这里介绍的是在软件内部的使用,现在市面上应用的指纹解锁的应用还是很多的,尤其以金钱交易类的应用作为快捷登录和支付来使用,例如支付宝,招商银行等.
-这里具体讲解一下如何使用指纹识别技术解锁应用">
-<meta property="og:updated_time" content="2016-11-15T09:14:39.000Z">
+<meta property="og:description" content="SpeechRecognition简介iOS10引入了一个新的API: Speech.framework,语音识别功能,可以执行语音转录实时和记录音频.">
+<meta property="og:image" content="https://github.com/626600815/anzhuangqiyeban/blob/master/img/16.png?raw=true">
+<meta property="og:updated_time" content="2016-11-16T02:54:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指纹解锁">
-<meta name="twitter:description" content="指纹识别是从iPhone 5s开始支持的,在日常使用中,可以用来解锁手机和软件内部验证等用途,这里介绍的是在软件内部的使用,现在市面上应用的指纹解锁的应用还是很多的,尤其以金钱交易类的应用作为快捷登录和支付来使用,例如支付宝,招商银行等.
-这里具体讲解一下如何使用指纹识别技术解锁应用">
+<meta name="twitter:title" content="iOS10新特性之语音识别">
+<meta name="twitter:description" content="SpeechRecognition简介iOS10引入了一个新的API: Speech.framework,语音识别功能,可以执行语音转录实时和记录音频.">
+<meta name="twitter:image" content="https://github.com/626600815/anzhuangqiyeban/blob/master/img/16.png?raw=true">
 
 
 
@@ -117,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2016/10/05/指纹解锁/"/>
+  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2016/11/15/iOS10新特性之语音识别/"/>
 
 
-  <title> 指纹解锁 | 小熊老师 </title>
+  <title> iOS10新特性之语音识别 | 小熊老师 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +282,7 @@
             
             
               
-                指纹解锁
+                iOS10新特性之语音识别
               
             
           </h1>
@@ -295,38 +294,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-05T09:00:00+08:00" content="2016-10-05">
-              2016-10-05
+            <time itemprop="dateCreated" datetime="2016-11-15T09:51:32+08:00" content="2016-11-15">
+              2016-11-15
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Swift功能模块/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift功能模块</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/05/指纹解锁/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/05/指纹解锁/" itemprop="commentsCount"></span>
+                <a href="/2016/11/15/iOS10新特性之语音识别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/15/iOS10新特性之语音识别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -349,16 +329,18 @@
       
 
       
-        <p>指纹识别是从iPhone 5s开始支持的,在日常使用中,可以用来解锁手机和软件内部验证等用途,这里介绍的是在软件内部的使用,现在市面上应用的指纹解锁的应用还是很多的,尤其以金钱交易类的应用作为快捷登录和支付来使用,例如支付宝,招商银行等.</p>
-<p>这里具体讲解一下如何使用指纹识别技术解锁应用<br><a id="more"></a></p>
-<h3 id="添加依赖库-引用头文件"><a href="#添加依赖库-引用头文件" class="headerlink" title="添加依赖库 引用头文件"></a>添加依赖库 引用头文件</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="type">LocalAuthentication</span>.framework</div><div class="line"></div><div class="line"><span class="keyword">import</span> LocalAuthentication</div></pre></td></tr></table></figure>
-<h3 id="实现指纹识别方法"><a href="#实现指纹识别方法" class="headerlink" title="实现指纹识别方法"></a>实现指纹识别方法</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">LocalAuthenticationLogin</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="comment">// 本地认证上下文联系对象</span></div><div class="line">    <span class="keyword">let</span> context = <span class="type">LAContext</span>()</div><div class="line">    <span class="keyword">var</span> error: <span class="type">NSError</span>?</div><div class="line"></div><div class="line">    <span class="comment">// 判断设备是否具备指纹认证功能</span></div><div class="line">    <span class="keyword">if</span> context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &amp;error) &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"可以指纹识别了"</span>)</div><div class="line">        context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: <span class="string">"验证指纹以确认您的身份"</span>, reply: &#123; (success, error) <span class="keyword">in</span></div><div class="line">            <span class="keyword">if</span> success &#123;</div><div class="line">                <span class="built_in">print</span>(<span class="string">"指纹验证成功"</span>)</div><div class="line">                <span class="type">DispatchQueue</span>.main.async &#123;</div><div class="line">                <span class="comment">//更新UI 必须在主线程中更新,否则天知道要到猴年马月能执行</span></div><div class="line">            &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="built_in">print</span>(<span class="string">"指纹验证失败 错误原因:<span class="subst">\(error)</span>"</span>)</div><div class="line">                <span class="keyword">let</span> errorMessage = <span class="keyword">self</span>.errorMessageForError(aerror: error)</div><div class="line">                <span class="built_in">print</span>(errorMessage)</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">let</span> errorMessage = <span class="keyword">self</span>.errorMessageForError(aerror: error)</div><div class="line">        <span class="built_in">print</span>(errorMessage)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="归纳验证错误原因"><a href="#归纳验证错误原因" class="headerlink" title="归纳验证错误原因"></a>归纳验证错误原因</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">errorMessageForError</span><span class="params">(aerror: Error?)</span></span> -&gt; <span class="type">String</span> &#123;</div><div class="line">    <span class="keyword">var</span> errorMessage = <span class="string">""</span></div><div class="line">    <span class="keyword">if</span> <span class="keyword">let</span> error = aerror <span class="keyword">as</span>? <span class="type">NSError</span> &#123;</div><div class="line">        <span class="keyword">switch</span> error.code &#123;</div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.authenticationFailed.rawValue:</div><div class="line">        errorMessage = <span class="string">"身份验证不成功"</span></div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.userCancel.rawValue:</div><div class="line">        errorMessage = <span class="string">"手动取消验证"</span></div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.userFallback.rawValue:</div><div class="line">        errorMessage = <span class="string">"使用密码登录"</span></div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.systemCancel.rawValue:</div><div class="line">        errorMessage = <span class="string">"身份验证被系统取消"</span></div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.passcodeNotSet.rawValue:</div><div class="line">        errorMessage = <span class="string">"没有设置密码"</span></div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.touchIDNotAvailable.rawValue:</div><div class="line">        errorMessage = <span class="string">"设备不支持指纹"</span></div><div class="line">        <span class="keyword">case</span> <span class="type">LAError</span>.touchIDNotEnrolled.rawValue:</div><div class="line">        errorMessage = <span class="string">"没有登记的手指触摸ID"</span></div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            errorMessage = <span class="string">""</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> #available(iOS <span class="number">9.0</span>, *)&#123;</div><div class="line">            <span class="keyword">if</span> error.code == <span class="type">LAError</span>.touchIDLockout.rawValue &#123;</div><div class="line">                errorMessage = <span class="string">"TouchID被锁"</span></div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> error.code == <span class="type">LAError</span>.appCancel.rawValue &#123;</div><div class="line">                errorMessage = <span class="string">"认证被取消应用程序"</span></div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> error.code == <span class="type">LAError</span>.invalidContext.rawValue &#123;</div><div class="line">                errorMessage = <span class="string">"调用之前已经失效"</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> errorMessage</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="当TouchID被锁"><a href="#当TouchID被锁" class="headerlink" title="当TouchID被锁"></a>当TouchID被锁</h3><blockquote>
-<p>5次验证失败之后TouchID会被锁死,无法再调起指纹识别,这时候我们需要调起系统密码输入界面输入密码来重现验证指纹功能</p>
+        <p>SpeechRecognition简介<br>iOS10引入了一个新的API: Speech.framework,语音识别功能,可以执行语音转录实时和记录音频.</p>
+<a id="more"></a>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>在使用系统提供的功能时需要在plist文件中配置权限,这里需要两个权限:语音识别,麦克风</p>
+<blockquote>
+<p>Privacy - Microphone Usage Description<br>Privacy - Speech Recognition Usage Description</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@available</span>(iOS <span class="number">9.0</span>, *)</div><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">alertSystemPasswordView</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="comment">// 本地认证上下文联系对象</span></div><div class="line">    <span class="keyword">let</span> context = <span class="type">LAContext</span>()</div><div class="line">    <span class="keyword">var</span> error: <span class="type">NSError</span>?</div><div class="line">    <span class="keyword">if</span> context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &amp;error) &#123;</div><div class="line">        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: <span class="string">"通过Home键验证已有手机指纹"</span>, reply: &#123; (success, error) <span class="keyword">in</span></div><div class="line">            <span class="keyword">if</span> success &#123;</div><div class="line">                <span class="built_in">print</span>(<span class="string">"重设成功"</span>)</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="built_in">print</span>(<span class="string">"重设失败"</span>)</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="https://github.com/xiaoxionglaoshi/DNLocalAuthentication" target="_blank" rel="external">源码下载</a></p>
+<p><img src="https://github.com/626600815/anzhuangqiyeban/blob/master/img/16.png?raw=true" alt="image"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="定义用到的属性"><a href="#定义用到的属性" class="headerlink" title="定义用到的属性"></a>定义用到的属性</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">var</span> audioEngine: <span class="type">AVAudioEngine</span>!</div><div class="line"><span class="keyword">private</span> <span class="keyword">var</span> speechRecognizer: <span class="type">SFSpeechRecognizer</span>!</div><div class="line"><span class="keyword">private</span> <span class="keyword">var</span> speechRequest: <span class="type">SFSpeechAudioBufferRecognitionRequest</span>!</div><div class="line"><span class="keyword">private</span> <span class="keyword">var</span> currentSpeechTask: <span class="type">SFSpeechRecognitionTask</span>!</div></pre></td></tr></table></figure>
+<h3 id="初始化授权"><a href="#初始化授权" class="headerlink" title="初始化授权"></a>初始化授权</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.audioEngine = <span class="type">AVAudioEngine</span>()</div><div class="line"><span class="keyword">self</span>.speechRecognizer = <span class="type">SFSpeechRecognizer</span>()</div><div class="line"><span class="keyword">self</span>.micButton.isEnabled = <span class="literal">false</span>;</div><div class="line"><span class="type">SFSpeechRecognizer</span>.requestAuthorization &#123; (status) <span class="keyword">in</span></div><div class="line">    <span class="keyword">guard</span> status == .authorized <span class="keyword">else</span> &#123;<span class="comment">// 用户授权判断</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 初始化语音处理器的输入模式</span></div><div class="line">    <span class="keyword">let</span> myFormat = <span class="keyword">self</span>.audioEngine.inputNode?.outputFormat(forBus: <span class="number">0</span>)</div><div class="line">    <span class="keyword">self</span>.audioEngine.inputNode?.installTap(onBus: <span class="number">0</span>, bufferSize: <span class="number">1024</span>, format: myFormat, block: &#123; (buffer, time) <span class="keyword">in</span></div><div class="line">        <span class="comment">// 为语音识别请求对象添加一个AudioPCMBuffer，来获取声音数据</span></div><div class="line">        <span class="keyword">self</span>.speechRequest.append(buffer)</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">// 语音处理器准备就绪（会为一些audioEngine启动时所必须的资源开辟内存）</span></div><div class="line">    <span class="keyword">self</span>.audioEngine.prepare()</div><div class="line"></div><div class="line">    <span class="keyword">self</span>.micButton.isEnabled = <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="开始录制"><a href="#开始录制" class="headerlink" title="开始录制"></a>开始录制</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">startDictating</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">do</span> &#123;</div><div class="line">        <span class="comment">// 启动声音处理器</span></div><div class="line">        <span class="keyword">try</span> <span class="keyword">self</span>.audioEngine.start()</div><div class="line">        <span class="comment">// 初始化</span></div><div class="line">        <span class="keyword">self</span>.speechRequest = <span class="type">SFSpeechAudioBufferRecognitionRequest</span>()</div><div class="line">        <span class="comment">// 使用speechRequest请求进行识别</span></div><div class="line">        <span class="keyword">self</span>.currentSpeechTask = <span class="keyword">self</span>.speechRecognizer.recognitionTask(with: <span class="keyword">self</span>.speechRequest, resultHandler: &#123; (result, error) <span class="keyword">in</span></div><div class="line">            <span class="comment">// 识别结果</span></div><div class="line">            <span class="keyword">guard</span> result != <span class="literal">nil</span> <span class="keyword">else</span> &#123;</div><div class="line">                <span class="keyword">return</span></div><div class="line">            &#125;</div><div class="line">        <span class="keyword">self</span>.contentLabel.text = result?.bestTranscription.formattedString;</div><div class="line">        &#125;)</div><div class="line"></div><div class="line">    &#125; <span class="keyword">catch</span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"开启失败: <span class="subst">\(error)</span>"</span>)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="停止录制"><a href="#停止录制" class="headerlink" title="停止录制"></a>停止录制</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">stopDictating</span><span class="params">()</span></span> &#123;</div><div class="line">    <span class="keyword">self</span>.audioEngine.stop()</div><div class="line">    <span class="keyword">self</span>.speechRequest.endAudio()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h3><p>@IBAction func micBtnClick(_ sender: UIButton) {<br>    if self.currentSpeechTask.state == .running {<br>        self.micButton.setTitle(“开始”, for: .normal)<br>        // 停止语音识别<br>        self.stopDictating()<br>    } else {<br>        self.micButton.setTitle(“停止”, for: .normal)<br>        self.contentLabel.text = “等待识别”<br>        // 开始语音识别<br>        self.startDictating()<br>    }<br>}</p>
 
       
     </div>
@@ -379,28 +361,18 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/指纹解锁/" rel="tag">#指纹解锁</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/03/内购退款流程/" rel="next" title="内购退款流程">
-                <i class="fa fa-chevron-left"></i> 内购退款流程
+              <a href="/2016/11/11/Alamofire网路请求库的使用/" rel="next" title="Alamofire网络请求库的使用">
+                <i class="fa fa-chevron-left"></i> Alamofire网络请求库的使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/07/系统声音服务的使用/" rel="prev" title="系统声音服务的使用">
-                系统声音服务的使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -415,10 +387,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/10/05/指纹解锁/"
-     data-title="指纹解锁"
+        <div class="ds-share flat" data-thread-key="2016/11/15/iOS10新特性之语音识别/"
+     data-title="iOS10新特性之语音识别"
      data-content=""
-     data-url="https://xiaoxionglaoshi.github.io/2016/10/05/指纹解锁/">
+     data-url="https://xiaoxionglaoshi.github.io/2016/11/15/iOS10新特性之语音识别/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -445,8 +417,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/05/指纹解锁/"
-           data-title="指纹解锁" data-url="https://xiaoxionglaoshi.github.io/2016/10/05/指纹解锁/">
+      <div class="ds-thread" data-thread-key="2016/11/15/iOS10新特性之语音识别/"
+           data-title="iOS10新特性之语音识别" data-url="https://xiaoxionglaoshi.github.io/2016/11/15/iOS10新特性之语音识别/">
       </div>
     
   </div>
@@ -570,7 +542,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖库-引用头文件"><span class="nav-number">1.</span> <span class="nav-text">添加依赖库 引用头文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现指纹识别方法"><span class="nav-number">2.</span> <span class="nav-text">实现指纹识别方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归纳验证错误原因"><span class="nav-number">3.</span> <span class="nav-text">归纳验证错误原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当TouchID被锁"><span class="nav-number">4.</span> <span class="nav-text">当TouchID被锁</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义用到的属性"><span class="nav-number">2.1.</span> <span class="nav-text">定义用到的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化授权"><span class="nav-number">2.2.</span> <span class="nav-text">初始化授权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始录制"><span class="nav-number">2.3.</span> <span class="nav-text">开始录制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止录制"><span class="nav-number">2.4.</span> <span class="nav-text">停止录制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UI"><span class="nav-number">2.5.</span> <span class="nav-text">UI</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

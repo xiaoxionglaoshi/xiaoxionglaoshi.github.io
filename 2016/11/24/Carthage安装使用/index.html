@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="横竖屏控制," />
+  <meta name="keywords" content="Carthage," />
 
 
 
@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="许多应用都支持横竖屏旋转,因此就有了每个界面需要能够自由控制界面方向的需求,我们以最常见的Navi+Tabbar为例,实现该种需求">
+<meta name="description" content="Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="横竖屏控制">
-<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/11/01/横竖屏控制/index.html">
+<meta property="og:title" content="Carthage安装使用">
+<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/11/24/Carthage安装使用/index.html">
 <meta property="og:site_name" content="小熊老师">
-<meta property="og:description" content="许多应用都支持横竖屏旋转,因此就有了每个界面需要能够自由控制界面方向的需求,我们以最常见的Navi+Tabbar为例,实现该种需求">
-<meta property="og:updated_time" content="2016-11-24T05:48:50.000Z">
+<meta property="og:description" content="Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情.">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/21.png?raw=true">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/22.png?raw=true">
+<meta property="og:updated_time" content="2016-11-25T02:17:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="横竖屏控制">
-<meta name="twitter:description" content="许多应用都支持横竖屏旋转,因此就有了每个界面需要能够自由控制界面方向的需求,我们以最常见的Navi+Tabbar为例,实现该种需求">
+<meta name="twitter:title" content="Carthage安装使用">
+<meta name="twitter:description" content="Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情.">
+<meta name="twitter:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/21.png?raw=true">
 
 
 
@@ -114,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2016/11/01/横竖屏控制/"/>
+  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2016/11/24/Carthage安装使用/"/>
 
 
-  <title> 横竖屏控制 | 小熊老师 </title>
+  <title> Carthage安装使用 | 小熊老师 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +283,7 @@
             
             
               
-                横竖屏控制
+                Carthage安装使用
               
             
           </h1>
@@ -292,8 +295,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-01T10:00:00+08:00" content="2016-11-01">
-              2016-11-01
+            <time itemprop="dateCreated" datetime="2016-11-24T15:26:14+08:00" content="2016-11-24">
+              2016-11-24
             </time>
           </span>
 
@@ -306,8 +309,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
                   </a>
                 </span>
 
@@ -322,8 +325,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/01/横竖屏控制/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/01/横竖屏控制/" itemprop="commentsCount"></span>
+                <a href="/2016/11/24/Carthage安装使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/24/Carthage安装使用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -351,17 +354,27 @@
       
 
       
-        <p>许多应用都支持横竖屏旋转,因此就有了每个界面需要能够自由控制界面方向的需求,我们以最常见的Navi+Tabbar为例,实现该种需求<br><a id="more"></a></p>
-<h3 id="导航控制器中设置"><a href="#导航控制器中设置" class="headerlink" title="导航控制器中设置"></a>导航控制器中设置</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DNNavigationController</span>: <span class="title">UINavigationController</span> </span>&#123;</div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> shouldAutorotate: <span class="type">Bool</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.topViewController!.shouldAutorotate</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> supportedInterfaceOrientations: <span class="type">UIInterfaceOrientationMask</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.topViewController!.supportedInterfaceOrientations</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> preferredStatusBarStyle: <span class="type">UIStatusBarStyle</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.topViewController!.preferredStatusBarStyle</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="TabBar设置"><a href="#TabBar设置" class="headerlink" title="TabBar设置"></a>TabBar设置</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DNTabBarViewController</span>: <span class="title">UITabBarController</span> </span>&#123;</div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> shouldAutorotate: <span class="type">Bool</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.selectedViewController!.shouldAutorotate</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">override</span> <span class="keyword">var</span> supportedInterfaceOrientations: <span class="type">UIInterfaceOrientationMask</span> &#123;</div><div class="line">        <span class="keyword">return</span> (<span class="keyword">self</span>.selectedViewController?.supportedInterfaceOrientations) ?? .all</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="在要控制的界面中实现"><a href="#在要控制的界面中实现" class="headerlink" title="在要控制的界面中实现"></a>在要控制的界面中实现</h3><blockquote>
-<p>现在大部分应用界面还都是以竖屏为主,最好定义一个ViewController的基类,在需要支持横竖屏的类里再重写改方法</p>
+        <p>Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情.</p>
+<a id="more"></a>
+<h1 id="更新Homebrew"><a href="#更新Homebrew" class="headerlink" title="更新Homebrew"></a>更新<a href="http://brew.sh/index_zh-cn.html" target="_blank" rel="external">Homebrew</a></h1><blockquote>
+<p>$ brew update</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="keyword">var</span> supportedInterfaceOrientations: <span class="type">UIInterfaceOrientationMask</span> &#123;</div><div class="line">    <span class="keyword">return</span> .portrait</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">override</span> <span class="keyword">var</span> shouldAutorotate: <span class="type">Bool</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><blockquote>
-<p>只是实现这些的话,在plus手机中可能会出现方向混乱的情况,尤其是手机横屏的时候进入,但是界面只支持竖屏,解决这一问题我们需要在应用初始化的时候定义方向,一定要在创建window之前定义</p>
+<h1 id="安装Carthage"><a href="#安装Carthage" class="headerlink" title="安装Carthage"></a>安装Carthage</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<p>$ brew install carthage</p>
+<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><p>$ carthage version</p>
+<h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><p>$ upgrade carthage</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>$ brew uninstall carthage</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="创建空的Cartfile"><a href="#创建空的Cartfile" class="headerlink" title="创建空的Cartfile"></a>创建空的Cartfile</h2><p>touch Cartfile</p>
+<h2 id="打开Cartfile文件"><a href="#打开Cartfile文件" class="headerlink" title="打开Cartfile文件"></a>打开Cartfile文件</h2><p>open -a Xcode Cartfile</p>
+<h2 id="添加依赖库"><a href="#添加依赖库" class="headerlink" title="添加依赖库"></a>添加依赖库</h2><p>github “Alamofire/Alamofire” ~&gt; 4.0</p>
+<h2 id="安装三方库"><a href="#安装三方库" class="headerlink" title="安装三方库"></a>安装三方库</h2><p>$ carthage update (指定平台安装 carthage update –platform iOS)</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">    <span class="comment">// 初始化屏幕方向</span></div><div class="line">    <span class="type">UIApplication</span>.shared.setStatusBarOrientation(.portrait, animated: <span class="literal">true</span>)</div><div class="line"></div><div class="line">    <span class="comment">// 创建window</span></div><div class="line">    <span class="keyword">self</span>.window = <span class="type">UIWindow</span>(frame: <span class="type">UIScreen</span>.main.bounds)</div><div class="line">    <span class="keyword">self</span>.window?.makeKeyAndVisible()</div><div class="line">    <span class="keyword">self</span>.window?.backgroundColor = <span class="type">UIColor</span>.white</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Xcode配置"><a href="#Xcode配置" class="headerlink" title="Xcode配置"></a>Xcode配置</h1><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/21.png?raw=true" alt="image"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>选择菜单Build Phases 添加新的Run Script 并添加一下命令</p>
+<blockquote>
+<p>/usr/local/bin/carthage copy-frameworks<br>点击Input Files下面+号,添加每一个Framework条目<br>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</p>
+</blockquote>
+<p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/22.png?raw=true" alt="image"></p>
 
       
     </div>
@@ -384,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/横竖屏控制/" rel="tag">#横竖屏控制</a>
+            <a href="/tags/Carthage/" rel="tag">#Carthage</a>
           
         </div>
       
@@ -393,17 +406,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/31/textField问题001/" rel="next" title="textField输入中文文字下沉问题">
-                <i class="fa fa-chevron-left"></i> textField输入中文文字下沉问题
+              <a href="/2016/11/24/图片尺寸/" rel="next" title="图片尺寸">
+                <i class="fa fa-chevron-left"></i> 图片尺寸
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/03/卡片动画/" rel="prev" title="卡片动画">
-                卡片动画 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -418,10 +427,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/11/01/横竖屏控制/"
-     data-title="横竖屏控制"
+        <div class="ds-share flat" data-thread-key="2016/11/24/Carthage安装使用/"
+     data-title="Carthage安装使用"
      data-content=""
-     data-url="https://xiaoxionglaoshi.github.io/2016/11/01/横竖屏控制/">
+     data-url="https://xiaoxionglaoshi.github.io/2016/11/24/Carthage安装使用/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -448,8 +457,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/01/横竖屏控制/"
-           data-title="横竖屏控制" data-url="https://xiaoxionglaoshi.github.io/2016/11/01/横竖屏控制/">
+      <div class="ds-thread" data-thread-key="2016/11/24/Carthage安装使用/"
+           data-title="Carthage安装使用" data-url="https://xiaoxionglaoshi.github.io/2016/11/24/Carthage安装使用/">
       </div>
     
   </div>
@@ -573,7 +582,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导航控制器中设置"><span class="nav-number">1.</span> <span class="nav-text">导航控制器中设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TabBar设置"><span class="nav-number">2.</span> <span class="nav-text">TabBar设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在要控制的界面中实现"><span class="nav-number">3.</span> <span class="nav-text">在要控制的界面中实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更新Homebrew"><span class="nav-number">1.</span> <span class="nav-text">更新Homebrew</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装Carthage"><span class="nav-number">2.</span> <span class="nav-text">安装Carthage</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看版本"><span class="nav-number">2.2.</span> <span class="nav-text">查看版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级"><span class="nav-number">2.3.</span> <span class="nav-text">升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载"><span class="nav-number">2.4.</span> <span class="nav-text">卸载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建空的Cartfile"><span class="nav-number">3.1.</span> <span class="nav-text">创建空的Cartfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开Cartfile文件"><span class="nav-number">3.2.</span> <span class="nav-text">打开Cartfile文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加依赖库"><span class="nav-number">3.3.</span> <span class="nav-text">添加依赖库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装三方库"><span class="nav-number">3.4.</span> <span class="nav-text">安装三方库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Xcode配置"><span class="nav-number">4.</span> <span class="nav-text">Xcode配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加"><span class="nav-number">4.1.</span> <span class="nav-text">添加</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">4.2.</span> <span class="nav-text">配置</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

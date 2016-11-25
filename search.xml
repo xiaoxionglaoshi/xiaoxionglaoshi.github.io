@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[Carthage安装使用]]></title>
       <url>%2F2016%2F11%2F24%2FCarthage%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
-      <content type="text"><![CDATA[Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情. 更新Homebrew $ brew update 安装Carthage安装 $ brew install carthage 查看版本$ carthage version 升级$ upgrade carthage 卸载$ brew uninstall carthage 使用创建空的Cartfiletouch Cartfile 打开Cartfile文件open -a Xcode Cartfile 添加依赖库github “Alamofire/Alamofire” ~&gt; 4.0 安装三方库$ carthage update (指定平台安装 carthage update –platform iOS) Xcode配置添加 配置选择菜单Build Phases 添加新的Run Script 并添加一下命令 /usr/local/bin/carthage copy-frameworks点击Input Files下面+号,添加每一个Framework条目$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework]]></content>
+      <content type="text"><![CDATA[Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情. 更新Homebrew $ brew update 安装Carthage安装 $ brew install carthage 查看版本 $ carthage version 升级 $ upgrade carthage 卸载 $ brew uninstall carthage 使用创建空的Cartfile touch Cartfile 打开Cartfile文件 open -a Xcode Cartfile 添加依赖库 github “Alamofire/Alamofire” ~&gt; 4.0 安装三方库 $ carthage update (指定平台安装 carthage update –platform iOS) Xcode配置添加 配置选择菜单Build Phases 添加新的Run Script 并添加一下命令 /usr/local/bin/carthage copy-frameworks 点击Input Files下面+号,添加每一个Framework条目 $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework]]></content>
     </entry>
 
     

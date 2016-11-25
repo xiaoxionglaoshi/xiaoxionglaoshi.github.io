@@ -92,7 +92,7 @@
 <meta property="og:description" content="Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情.">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/21.png?raw=true">
 <meta property="og:image" content="https://github.com/xiaoxionglaoshi/Home/blob/master/img/22.png?raw=true">
-<meta property="og:updated_time" content="2016-11-25T02:17:27.000Z">
+<meta property="og:updated_time" content="2016-11-25T02:19:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Carthage安装使用">
 <meta name="twitter:description" content="Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情.">
@@ -361,18 +361,36 @@
 </blockquote>
 <h1 id="安装Carthage"><a href="#安装Carthage" class="headerlink" title="安装Carthage"></a>安装Carthage</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
 <p>$ brew install carthage</p>
-<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><p>$ carthage version</p>
-<h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><p>$ upgrade carthage</p>
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p>$ brew uninstall carthage</p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="创建空的Cartfile"><a href="#创建空的Cartfile" class="headerlink" title="创建空的Cartfile"></a>创建空的Cartfile</h2><p>touch Cartfile</p>
-<h2 id="打开Cartfile文件"><a href="#打开Cartfile文件" class="headerlink" title="打开Cartfile文件"></a>打开Cartfile文件</h2><p>open -a Xcode Cartfile</p>
-<h2 id="添加依赖库"><a href="#添加依赖库" class="headerlink" title="添加依赖库"></a>添加依赖库</h2><p>github “Alamofire/Alamofire” ~&gt; 4.0</p>
-<h2 id="安装三方库"><a href="#安装三方库" class="headerlink" title="安装三方库"></a>安装三方库</h2><p>$ carthage update (指定平台安装 carthage update –platform iOS)</p>
+</blockquote>
+<h2 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h2><blockquote>
+<p>$ carthage version</p>
+</blockquote>
+<h2 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h2><blockquote>
+<p>$ upgrade carthage</p>
+</blockquote>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><blockquote>
+<p>$ brew uninstall carthage</p>
+</blockquote>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="创建空的Cartfile"><a href="#创建空的Cartfile" class="headerlink" title="创建空的Cartfile"></a>创建空的Cartfile</h2><blockquote>
+<p>touch Cartfile</p>
+</blockquote>
+<h2 id="打开Cartfile文件"><a href="#打开Cartfile文件" class="headerlink" title="打开Cartfile文件"></a>打开Cartfile文件</h2><blockquote>
+<p>open -a Xcode Cartfile</p>
+</blockquote>
+<h2 id="添加依赖库"><a href="#添加依赖库" class="headerlink" title="添加依赖库"></a>添加依赖库</h2><blockquote>
+<p>github “Alamofire/Alamofire” ~&gt; 4.0</p>
+</blockquote>
+<h2 id="安装三方库"><a href="#安装三方库" class="headerlink" title="安装三方库"></a>安装三方库</h2><blockquote>
+<p>$ carthage update (指定平台安装 carthage update –platform iOS)</p>
 </blockquote>
 <h1 id="Xcode配置"><a href="#Xcode配置" class="headerlink" title="Xcode配置"></a>Xcode配置</h1><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/21.png?raw=true" alt="image"></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>选择菜单Build Phases 添加新的Run Script 并添加一下命令</p>
 <blockquote>
-<p>/usr/local/bin/carthage copy-frameworks<br>点击Input Files下面+号,添加每一个Framework条目<br>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</p>
+<p>/usr/local/bin/carthage copy-frameworks</p>
+</blockquote>
+<p>点击Input Files下面+号,添加每一个Framework条目</p>
+<blockquote>
+<p>$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</p>
 </blockquote>
 <p><img src="https://github.com/xiaoxionglaoshi/Home/blob/master/img/22.png?raw=true" alt="image"></p>
 

@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Android和iOS音频互通]]></title>
+      <url>%2F2016%2F12%2F01%2FAndroid%E5%92%8CiOS%E9%9F%B3%E9%A2%91%E4%BA%92%E9%80%9A%2F</url>
+      <content type="text"><![CDATA[最近项目中遇到一个问题,Android发送的音频文件在iOS端无法播放,音频格式是AMR,iOS端在将ARM格式转换成WAV格式时失败,用的是libopencore-amrnb库后来发现,是Android端转换的AMR和我们这边转换的不一样,虽然后缀都是.amr,但是Android转换出来的详细信息和我们的不一样 下面是Android端需要设置的代码1234567mRecorder = new MediaRecorder();mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);mRecorder.setOutputFormat(MediaRecorder.OutputFormat.AMR_NB);mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);mRecorder.setAudioChannels(1);mRecorder.setAudioSamplingRate(8000);mRecorder.setAudioEncodingBitRate(64); 1.其中setOutputFormat和setAudioEncoder中一定要设置统一都为AMR_NB2.后三行一定要设置哦]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Carthage安装使用]]></title>
       <url>%2F2016%2F11%2F19%2FCarthage%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%2F</url>
       <content type="text"><![CDATA[Carthage依赖库管理工具,同cocoapods一样能够很好地管理我们的三方库资源,同时又有许多优于cocoapods的地方,越来越多的三方库开始支持Carthage集成了,目前项目开始起用Swift了,也换个依赖库管理工具,换个心情. 更新Homebrew $ brew update 安装Carthage安装 $ brew install carthage 查看版本 $ carthage version 升级 $ upgrade carthage 卸载 $ brew uninstall carthage 使用创建空的Cartfile touch Cartfile 打开Cartfile文件 open -a Xcode Cartfile 添加依赖库 github “Alamofire/Alamofire” ~&gt; 4.0 安装三方库 $ carthage update (指定平台安装 carthage update –platform iOS) Xcode配置添加 配置选择菜单Build Phases 添加新的Run Script 并添加一下命令 /usr/local/bin/carthage copy-frameworks 点击Input Files下面+号,添加每一个Framework条目 $(SRCROOT)/Carthage/Build/iOS/Alamofire.framework]]></content>

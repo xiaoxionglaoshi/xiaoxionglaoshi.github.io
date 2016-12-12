@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/12/01/Android和iOS音频互通/index.html">
 <meta property="og:site_name" content="小熊老师">
 <meta property="og:description" content="最近项目中遇到一个问题,Android发送的音频文件在iOS端无法播放,音频格式是AMR,iOS端在将ARM格式转换成WAV格式时失败,用的是libopencore-amrnb库后来发现,是Android端转换的AMR和我们这边转换的不一样,虽然后缀都是.amr,但是Android转换出来的详细信息和我们的不一样">
-<meta property="og:updated_time" content="2016-12-09T02:04:28.000Z">
+<meta property="og:updated_time" content="2016-12-12T01:50:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android和iOS音频互通">
 <meta name="twitter:description" content="最近项目中遇到一个问题,Android发送的音频文件在iOS端无法播放,音频格式是AMR,iOS端在将ARM格式转换成WAV格式时失败,用的是libopencore-amrnb库后来发现,是Android端转换的AMR和我们这边转换的不一样,虽然后缀都是.amr,但是Android转换出来的详细信息和我们的不一样">
@@ -352,8 +352,8 @@
 
       
         <p>最近项目中遇到一个问题,Android发送的音频文件在iOS端无法播放,音频格式是AMR,iOS端在将ARM格式转换成WAV格式时失败,用的是libopencore-amrnb库<br>后来发现,是Android端转换的AMR和我们这边转换的不一样,虽然后缀都是.amr,但是Android转换出来的详细信息和我们的不一样<br><a id="more"></a></p>
-<p>下面是Android端需要设置的代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mRecorder = <span class="keyword">new</span> MediaRecorder();</div><div class="line">mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);</div><div class="line">mRecorder.setOutputFormat(MediaRecorder.OutputFormat.AMR_NB);</div><div class="line">mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);</div><div class="line">mRecorder.setAudioChannels(<span class="number">1</span>);</div><div class="line">mRecorder.setAudioSamplingRate(<span class="number">8000</span>);</div><div class="line">mRecorder.setAudioEncodingBitRate(<span class="number">64</span>);</div></pre></td></tr></table></figure></p>
-<p>1.其中setOutputFormat和setAudioEncoder中一定要设置统一都为AMR_NB<br>2.后三行一定要设置哦</p>
+<p>下面是Android端需要设置的代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mRecorder = new MediaRecorder();</div><div class="line">mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);</div><div class="line">mRecorder.setOutputFormat(MediaRecorder.OutputFormat.AMR_NB);</div><div class="line">mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);</div><div class="line"># mRecorder.setAudioChannels(1);</div><div class="line"># mRecorder.setAudioSamplingRate(8000);</div><div class="line"># mRecorder.setAudioEncodingBitRate(64);</div></pre></td></tr></table></figure></p>
+<p>1.其中setOutputFormat和setAudioEncoder中一定要设置统一都为AMR_NB<br>2.后三行一定不要写哦</p>
 
       
     </div>

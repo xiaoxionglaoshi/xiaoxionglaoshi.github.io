@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xiaoxionglaoshi, iOS" />
+  <meta name="keywords" content="deinit问题," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="这是一个神奇的网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小熊老师">
-<meta property="og:url" content="https://xiaoxionglaoshi.github.io/tags/Hexo/index.html">
+<meta name="description" content="在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="deinit不执行的问题">
+<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/11/25/deinit不执行的问题/index.html">
 <meta property="og:site_name" content="小熊老师">
-<meta property="og:description" content="这是一个神奇的网站">
+<meta property="og:description" content="在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc">
+<meta property="og:updated_time" content="2016-12-14T07:34:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小熊老师">
-<meta name="twitter:description" content="这是一个神奇的网站">
+<meta name="twitter:title" content="deinit不执行的问题">
+<meta name="twitter:description" content="在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc">
 
 
 
@@ -113,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/tags/Hexo/"/>
+  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2016/11/25/deinit不执行的问题/"/>
 
 
-  <title> 标签: Hexo | 小熊老师 </title>
+  <title> deinit不执行的问题 | 小熊老师 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -258,46 +259,178 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Hexo
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                deinit不执行的问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-25T15:24:25+08:00" content="2016-11-25">
+              2016-11-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/25/deinit不执行的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/25/deinit不执行的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <p>在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc<br><a id="more"></a><br>最近写了个demo,过程中发现视图一直不执行deinit的方法,也就是说视图没有释放,查看了一下代码,发现代码中有一处比较可以,那就是写了个protocol,相互持有无法释放</p>
+<p>##解决办法<br>给其中一个delegate添加weak来打破持有<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">weak</span> <span class="keyword">var</span> myDelegate: naviDelegate?</div></pre></td></tr></table></figure></p>
+<p>这时候delegate就需要定义为类protocol<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">naviDelegate</span>: <span class="title">class</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/01/hexo建站/" itemprop="url">
-              
-                <span itemprop="name">hexo建站</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-01T16:14:13+08:00"
-              content="2016-10-01" >
-          10-01
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deinit问题/" rel="tag">#deinit问题</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/23/沙盒文件操作/" rel="next" title="沙盒文件操作">
+                <i class="fa fa-chevron-left"></i> 沙盒文件操作
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/01/Android和iOS音频互通/" rel="prev" title="Android和iOS音频互通">
+                Android和iOS音频互通 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/11/25/deinit不执行的问题/"
+     data-title="deinit不执行的问题"
+     data-content=""
+     data-url="https://xiaoxionglaoshi.github.io/2016/11/25/deinit不执行的问题/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -305,6 +438,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/25/deinit不执行的问题/"
+           data-title="deinit不执行的问题" data-url="https://xiaoxionglaoshi.github.io/2016/11/25/deinit不执行的问题/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -324,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -408,6 +558,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -510,6 +671,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

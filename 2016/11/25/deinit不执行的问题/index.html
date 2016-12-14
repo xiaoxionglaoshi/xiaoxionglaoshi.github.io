@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/11/25/deinit不执行的问题/index.html">
 <meta property="og:site_name" content="小熊老师">
 <meta property="og:description" content="在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc">
-<meta property="og:updated_time" content="2016-12-14T07:34:24.000Z">
+<meta property="og:updated_time" content="2016-12-14T07:45:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="deinit不执行的问题">
 <meta name="twitter:description" content="在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc">
@@ -352,7 +352,7 @@
 
       
         <p>在Objective-C语法中,我们确定一个视图是否销毁可以通过dealloc方法查看,而Swift中没有此方法,不过提供deinit等同于dealloc<br><a id="more"></a><br>最近写了个demo,过程中发现视图一直不执行deinit的方法,也就是说视图没有释放,查看了一下代码,发现代码中有一处比较可以,那就是写了个protocol,相互持有无法释放</p>
-<p>##解决办法<br>给其中一个delegate添加weak来打破持有<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">weak</span> <span class="keyword">var</span> myDelegate: naviDelegate?</div></pre></td></tr></table></figure></p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>给其中一个delegate添加weak来打破持有<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">weak</span> <span class="keyword">var</span> myDelegate: naviDelegate?</div></pre></td></tr></table></figure></p>
 <p>这时候delegate就需要定义为类protocol<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">naviDelegate</span>: <span class="title">class</span> </span>&#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
@@ -565,7 +565,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法"><span class="nav-number">1.</span> <span class="nav-text">解决办法</span></a></li></ol></div>
             
           </div>
         </section>

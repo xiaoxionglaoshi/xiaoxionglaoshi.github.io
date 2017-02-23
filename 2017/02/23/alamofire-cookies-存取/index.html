@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xiaoxionglaoshi, iOS" />
+  <meta name="keywords" content="alamofire," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="这是一个神奇的网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小熊老师">
-<meta property="og:url" content="https://xiaoxionglaoshi.github.io/tags/音频/index.html">
+<meta name="description" content="我们在用alamofire请求数据的时候,alamofire会在请求中携带cookie,不过应用重启之后,cookies就不知道跑哪去了,这是后我们需要对cookies进行保存,以便下次打开应用的时候能够携带.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="alamofire cookies 存取">
+<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2017/02/23/alamofire-cookies-存取/index.html">
 <meta property="og:site_name" content="小熊老师">
-<meta property="og:description" content="这是一个神奇的网站">
+<meta property="og:description" content="我们在用alamofire请求数据的时候,alamofire会在请求中携带cookie,不过应用重启之后,cookies就不知道跑哪去了,这是后我们需要对cookies进行保存,以便下次打开应用的时候能够携带.">
+<meta property="og:updated_time" content="2017-02-23T06:58:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小熊老师">
-<meta name="twitter:description" content="这是一个神奇的网站">
+<meta name="twitter:title" content="alamofire cookies 存取">
+<meta name="twitter:description" content="我们在用alamofire请求数据的时候,alamofire会在请求中携带cookie,不过应用重启之后,cookies就不知道跑哪去了,这是后我们需要对cookies进行保存,以便下次打开应用的时候能够携带.">
 
 
 
@@ -113,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/tags/音频/"/>
+  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2017/02/23/alamofire-cookies-存取/"/>
 
 
-  <title> 标签: 音频 | 小熊老师 </title>
+  <title> alamofire cookies 存取 | 小熊老师 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -258,46 +259,179 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        音频
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                alamofire cookies 存取
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-23T14:50:41+08:00" content="2017-02-23">
+              2017-02-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/swift/" itemprop="url" rel="index">
+                    <span itemprop="name">swift</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/23/alamofire-cookies-存取/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/23/alamofire-cookies-存取/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <p>我们在用alamofire请求数据的时候,alamofire会在请求中携带cookie,不过应用重启之后,cookies就不知道跑哪去了,这是后我们需要对cookies进行保存,以便下次打开应用的时候能够携带.</p>
+<a id="more"></a>
+<h2 id="获取cookies"><a href="#获取cookies" class="headerlink" title="获取cookies"></a>获取cookies</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="type">Alamofire</span>.request(<span class="string">"https://httpbin.org/get"</span>).responseData &#123; (response) <span class="keyword">in</span></div><div class="line">       <span class="keyword">let</span> headerFields = response.response?.allHeaderFields <span class="keyword">as</span>! [<span class="type">String</span>: <span class="type">String</span>]</div><div class="line">       <span class="keyword">let</span> url = response.request?.url</div><div class="line">       <span class="keyword">let</span> cookies = <span class="type">HTTPCookie</span>.cookies(withResponseHeaderFields: headerFields, <span class="keyword">for</span>: url!)</div><div class="line">       <span class="keyword">var</span> cookieArray = [ [<span class="type">HTTPCookiePropertyKey</span> : <span class="type">Any</span> ] ]()</div><div class="line">       <span class="keyword">for</span> cookie <span class="keyword">in</span> cookies &#123;</div><div class="line">           cookieArray.append(cookie.properties!)</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<h2 id="保存cookies"><a href="#保存cookies" class="headerlink" title="保存cookies"></a>保存cookies</h2><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="type">UserDefaults</span>.standard.<span class="keyword">set</span>(cookieArray, forKey: <span class="string">"alamofire_cookies"</span>)</div></pre></td></tr></table></figure>
+<h2 id="读取并重新设置cookies"><a href="#读取并重新设置cookies" class="headerlink" title="读取并重新设置cookies"></a>读取并重新设置cookies</h2><blockquote>
+<p>这一步一般在appdelegate中设置即可</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> cookieArray = <span class="type">UserDefaults</span>.standard.array(forKey: <span class="string">"alamofire_cookies"</span>) &#123;</div><div class="line">      <span class="keyword">for</span> cookieData <span class="keyword">in</span> cookieArray &#123;</div><div class="line">          <span class="keyword">if</span> <span class="keyword">let</span> dict = cookieData <span class="keyword">as</span>? [<span class="type">HTTPCookiePropertyKey</span> : <span class="type">Any</span>] &#123;</div><div class="line">              <span class="keyword">if</span> <span class="keyword">let</span> cookie = <span class="type">HTTPCookie</span>.<span class="keyword">init</span>(properties : dict) &#123;</div><div class="line">                  <span class="type">HTTPCookieStorage</span>.shared.setCookie(cookie)</div><div class="line">                  <span class="built_in">print</span>(<span class="string">"cookie: <span class="subst">\(cookie)</span>"</span>)</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/12/01/Android和iOS音频互通/" itemprop="url">
-              
-                <span itemprop="name">Android和iOS音频互通</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-12-01T09:56:37+08:00"
-              content="2016-12-01" >
-          12-01
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/alamofire/" rel="tag">#alamofire</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/21/HealthKit--步数修改/" rel="next" title="HealthKit--步数修改">
+                <i class="fa fa-chevron-left"></i> HealthKit--步数修改
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/02/23/alamofire-cookies-存取/"
+     data-title="alamofire cookies 存取"
+     data-content=""
+     data-url="https://xiaoxionglaoshi.github.io/2017/02/23/alamofire-cookies-存取/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -305,6 +439,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/23/alamofire-cookies-存取/"
+           data-title="alamofire cookies 存取" data-url="https://xiaoxionglaoshi.github.io/2017/02/23/alamofire-cookies-存取/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -324,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -408,6 +559,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取cookies"><span class="nav-number">1.</span> <span class="nav-text">获取cookies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存cookies"><span class="nav-number">2.</span> <span class="nav-text">保存cookies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读取并重新设置cookies"><span class="nav-number">3.</span> <span class="nav-text">读取并重新设置cookies</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -510,6 +672,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

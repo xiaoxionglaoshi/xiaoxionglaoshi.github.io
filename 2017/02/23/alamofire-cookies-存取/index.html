@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://xiaoxionglaoshi.github.io/2017/02/23/alamofire-cookies-存取/index.html">
 <meta property="og:site_name" content="小熊老师">
 <meta property="og:description" content="我们在用alamofire请求数据的时候,alamofire会在请求中携带cookie,不过应用重启之后,cookies就不知道跑哪去了,这是后我们需要对cookies进行保存,以便下次打开应用的时候能够携带.">
-<meta property="og:updated_time" content="2017-02-23T06:58:22.000Z">
+<meta property="og:updated_time" content="2017-02-23T07:00:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="alamofire cookies 存取">
 <meta name="twitter:description" content="我们在用alamofire请求数据的时候,alamofire会在请求中携带cookie,不过应用重启之后,cookies就不知道跑哪去了,这是后我们需要对cookies进行保存,以便下次打开应用的时候能够携带.">
@@ -359,6 +359,10 @@
 <p>这一步一般在appdelegate中设置即可</p>
 </blockquote>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> cookieArray = <span class="type">UserDefaults</span>.standard.array(forKey: <span class="string">"alamofire_cookies"</span>) &#123;</div><div class="line">      <span class="keyword">for</span> cookieData <span class="keyword">in</span> cookieArray &#123;</div><div class="line">          <span class="keyword">if</span> <span class="keyword">let</span> dict = cookieData <span class="keyword">as</span>? [<span class="type">HTTPCookiePropertyKey</span> : <span class="type">Any</span>] &#123;</div><div class="line">              <span class="keyword">if</span> <span class="keyword">let</span> cookie = <span class="type">HTTPCookie</span>.<span class="keyword">init</span>(properties : dict) &#123;</div><div class="line">                  <span class="type">HTTPCookieStorage</span>.shared.setCookie(cookie)</div><div class="line">                  <span class="built_in">print</span>(<span class="string">"cookie: <span class="subst">\(cookie)</span>"</span>)</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>读取到的cookies样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;args&quot;: &#123;&#125;, </div><div class="line">  &quot;headers&quot;: &#123;</div><div class="line">    &quot;Accept&quot;: &quot;*/*&quot;, </div><div class="line">    &quot;Accept-Encoding&quot;: &quot;gzip;q=1.0, compress;q=0.5&quot;, </div><div class="line">    &quot;Accept-Language&quot;: &quot;zh-Hans-US;q=1.0, en;q=0.9&quot;, </div><div class="line">    &quot;Host&quot;: &quot;httpbin.org&quot;, </div><div class="line">    &quot;User-Agent&quot;: &quot;DNSwiftProject/1.0 (com.wjn.DNJPushDemo; build:1; iOS 10.2.0) Alamofire/4.2.0&quot;</div><div class="line">  &#125;, </div><div class="line">  &quot;origin&quot;: &quot;119.40.36.206&quot;, </div><div class="line">  &quot;url&quot;: &quot;https://httpbin.org/get&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>

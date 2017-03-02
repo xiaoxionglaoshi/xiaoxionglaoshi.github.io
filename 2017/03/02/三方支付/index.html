@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="textField 问题," />
+  <meta name="keywords" content="第三方," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="当我们用storyboard创建一个textfield的时候,输入中文时文字会往下偏移,输入英文时一切正常">
+<meta name="description" content="最近项目需要集成第三方支付,主要是以微信和支付宝为主,顺手就封装了一下,方便以后的使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="textField输入中文文字下沉问题">
-<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2016/10/31/textField问题001/index.html">
+<meta property="og:title" content="三方支付">
+<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2017/03/02/三方支付/index.html">
 <meta property="og:site_name" content="小熊老师">
-<meta property="og:description" content="当我们用storyboard创建一个textfield的时候,输入中文时文字会往下偏移,输入英文时一切正常">
-<meta property="og:updated_time" content="2016-11-24T05:48:14.000Z">
+<meta property="og:description" content="最近项目需要集成第三方支付,主要是以微信和支付宝为主,顺手就封装了一下,方便以后的使用">
+<meta property="og:updated_time" content="2017-03-02T06:33:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="textField输入中文文字下沉问题">
-<meta name="twitter:description" content="当我们用storyboard创建一个textfield的时候,输入中文时文字会往下偏移,输入英文时一切正常">
+<meta name="twitter:title" content="三方支付">
+<meta name="twitter:description" content="最近项目需要集成第三方支付,主要是以微信和支付宝为主,顺手就封装了一下,方便以后的使用">
 
 
 
@@ -114,10 +114,10 @@
 
 
 
-  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2016/10/31/textField问题001/"/>
+  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2017/03/02/三方支付/"/>
 
 
-  <title> textField输入中文文字下沉问题 | 小熊老师 </title>
+  <title> 三方支付 | 小熊老师 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +280,7 @@
             
             
               
-                textField输入中文文字下沉问题
+                三方支付
               
             
           </h1>
@@ -292,8 +292,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-31T10:00:00+08:00" content="2016-10-31">
-              2016-10-31
+            <time itemprop="dateCreated" datetime="2017-03-02T14:10:00+08:00" content="2017-03-02">
+              2017-03-02
             </time>
           </span>
 
@@ -306,8 +306,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Swift/" itemprop="url" rel="index">
-                    <span itemprop="name">Swift</span>
+                  <a href="/categories/Objective-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Objective-C</span>
                   </a>
                 </span>
 
@@ -322,8 +322,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/31/textField问题001/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/31/textField问题001/" itemprop="commentsCount"></span>
+                <a href="/2017/03/02/三方支付/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/02/三方支付/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -351,8 +351,22 @@
       
 
       
-        <p>当我们用storyboard创建一个textfield的时候,输入中文时文字会往下偏移,输入英文时一切正常<br><a id="more"></a></p>
-<p>解决其实很简单,设置一下textfield的clearButtonMode就行了<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">textField.clearButtonMode = .whileEditing</div></pre></td></tr></table></figure></p>
+        <p>最近项目需要集成第三方支付,主要是以微信和支付宝为主,顺手就封装了一下,方便以后的使用<br><a id="more"></a></p>
+<h2 id="支付宝集成"><a href="#支付宝集成" class="headerlink" title="支付宝集成"></a>支付宝集成</h2><p>订单信息由服务端生成,返回一个字符串orderString</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)aliPayWithOrderString:(<span class="type">NSString</span> *)orderString &#123;</div><div class="line">    <span class="keyword">if</span> (orderString.length &gt; <span class="number">0</span>) &#123;</div><div class="line">        <span class="comment">//应用注册scheme,在AliSDKDemo-Info.plist定义URL types</span></div><div class="line">        <span class="type">NSString</span> *appScheme = @<span class="string">"alisdkdemo"</span>;</div><div class="line">        [[<span class="type">AlipaySDK</span> defaultService] payOrder:orderString fromScheme:appScheme callback:^(<span class="type">NSDictionary</span> *resultDic) &#123;</div><div class="line">            <span class="type">NSLog</span>(@<span class="string">"alipay result: %@"</span>, resultDic);</div><div class="line">        &#125;];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="微信集成"><a href="#微信集成" class="headerlink" title="微信集成"></a>微信集成</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[<span class="type">WXApi</span> registerApp:weixinAppID];</div></pre></td></tr></table></figure>
+<p>服务端返回订单信息</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">- (void)weChatPayWithDict:(<span class="type">NSDictionary</span> *)dict &#123;</div><div class="line">    <span class="keyword">if</span>(dict != <span class="literal">nil</span>)&#123;</div><div class="line">        <span class="type">NSMutableString</span> *retcode = [dict objectForKey:@<span class="string">"retcode"</span>];</div><div class="line">        <span class="keyword">if</span> (retcode.intValue == <span class="number">0</span>)&#123;</div><div class="line">            <span class="type">NSMutableString</span> *stamp  = [dict objectForKey:@<span class="string">"timestamp"</span>];</div><div class="line">            <span class="comment">//调起微信支付</span></div><div class="line">            <span class="type">PayReq</span>* req             = [[<span class="type">PayReq</span> alloc] <span class="keyword">init</span>];</div><div class="line">            req.partnerId           = [dict objectForKey:@<span class="string">"partnerid"</span>];</div><div class="line">            req.prepayId            = [dict objectForKey:@<span class="string">"prepayid"</span>];</div><div class="line">            req.nonceStr            = [dict objectForKey:@<span class="string">"noncestr"</span>];</div><div class="line">            req.timeStamp           = stamp.intValue;</div><div class="line">            req.package             = [dict objectForKey:@<span class="string">"package"</span>];</div><div class="line">            req.sign                = [dict objectForKey:@<span class="string">"sign"</span>];</div><div class="line">            [<span class="type">WXApi</span> sendReq:req];</div><div class="line">            <span class="comment">//日志输出</span></div><div class="line">            <span class="type">NSLog</span>(@<span class="string">"appid=%@\npartid=%@\nprepayid=%@\nnoncestr=%@\ntimestamp=%ld\npackage=%@\nsign=%@"</span>,[dict objectForKey:@<span class="string">"appid"</span>],req.partnerId,req.prepayId,req.nonceStr,(long)req.timeStamp,req.package,req.sign );</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="type">NSLog</span>(@<span class="string">"服务器返回错误，未获取到json对象"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>遵守代理<code>WXApiDelegate</code></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- (void)onResp:(<span class="type">BaseResp</span>*)resp ;</div><div class="line">- (void)onReq:(<span class="type">BaseReq</span>*)req;</div></pre></td></tr></table></figure>
+<p>##三方登陆回调</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">- (void)openURL:(<span class="type">NSURL</span> *)url &#123;</div><div class="line">    <span class="comment">// 支付宝回调</span></div><div class="line">    <span class="keyword">if</span> ([url.host isEqualToString:@<span class="string">"safepay"</span>]) &#123;</div><div class="line">        <span class="comment">// 支付跳转支付宝钱包进行支付，处理支付结果</span></div><div class="line">        [[<span class="type">AlipaySDK</span> defaultService] processOrderWithPaymentResult:url standbyCallback:^(<span class="type">NSDictionary</span> *resultDic) &#123;</div><div class="line">            <span class="type">NSLog</span>(@<span class="string">"result = %@"</span>,resultDic);</div><div class="line">        &#125;];</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 微信回调</span></div><div class="line">    <span class="keyword">if</span> ([url.host isEqualToString:@<span class="string">"pay"</span>]) &#123;</div><div class="line">        [<span class="type">WXApi</span> handleOpenURL:url delegate:<span class="keyword">self</span>];</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在<code>AppDelegate</code>中调用</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// iOS9前</span></div><div class="line">- (<span class="type">BOOL</span>)application:(<span class="type">UIApplication</span> *)application openURL:(<span class="type">NSURL</span> *)url sourceApplication:(<span class="type">NSString</span> *)sourceApplication annotation:(id)annotation&#123;</div><div class="line">    [[<span class="type">DNPayManager</span> sharedInstance] openURL:url];</div><div class="line">    <span class="keyword">return</span> <span class="type">YES</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// iOS9后</span></div><div class="line">- (<span class="type">BOOL</span>)application:(<span class="type">UIApplication</span> *)app openURL:(<span class="type">NSURL</span> *)url options:(<span class="type">NSDictionary</span>&lt;<span class="type">NSString</span>*, id&gt; *)options&#123;</div><div class="line">    [[<span class="type">DNPayManager</span> sharedInstance] openURL:url];</div><div class="line">    <span class="keyword">return</span> <span class="type">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="支付宝"><a href="#支付宝" class="headerlink" title="支付宝"></a>支付宝</h3><p>在封装的时候出现SDK中爆红<code>Unknown type name &#39;UIWindow&#39;</code>,<br>解决方法<br>由于是在NSObject类中封装,缺少UI框架,只需要在封装类中添加<code>#import &lt;UIKit/UIKit.h&gt;</code>即可</p>
+<h3 id="微信"><a href="#微信" class="headerlink" title="微信"></a>微信</h3><p>在调用<code>[WXApi registerApp:weixinAppID];</code>时崩溃,显示如下问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-[__NSArrayM enqueue:]: unrecognized selector sent to instance 0x174056620</div></pre></td></tr></table></figure></p>
+<p>解决方法:<br>在<code>other linker flags</code>中添加<code>-ObjC</code>即可</p>
+<p><a href="https://github.com/xiaoxionglaoshi/DNPayDemo" target="_blank" rel="external">源码下载</a></p>
 
       
     </div>
@@ -375,7 +389,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/textField-问题/" rel="tag">#textField 问题</a>
+            <a href="/tags/第三方/" rel="tag">#第三方</a>
           
         </div>
       
@@ -384,17 +398,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/29/Xcode8注释失效/" rel="next" title="Xcode8注释失效">
-                <i class="fa fa-chevron-left"></i> Xcode8注释失效
+              <a href="/2017/03/01/Big-O-Notation了解/" rel="next" title="Big-O Notation了解">
+                <i class="fa fa-chevron-left"></i> Big-O Notation了解
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/01/横竖屏控制/" rel="prev" title="横竖屏控制">
-                横竖屏控制 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,10 +419,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/10/31/textField问题001/"
-     data-title="textField输入中文文字下沉问题"
+        <div class="ds-share flat" data-thread-key="2017/03/02/三方支付/"
+     data-title="三方支付"
      data-content=""
-     data-url="https://xiaoxionglaoshi.github.io/2016/10/31/textField问题001/">
+     data-url="https://xiaoxionglaoshi.github.io/2017/03/02/三方支付/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -439,8 +449,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/31/textField问题001/"
-           data-title="textField输入中文文字下沉问题" data-url="https://xiaoxionglaoshi.github.io/2016/10/31/textField问题001/">
+      <div class="ds-thread" data-thread-key="2017/03/02/三方支付/"
+           data-title="三方支付" data-url="https://xiaoxionglaoshi.github.io/2017/03/02/三方支付/">
       </div>
     
   </div>
@@ -564,7 +574,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支付宝集成"><span class="nav-number">1.</span> <span class="nav-text">支付宝集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信集成"><span class="nav-number">2.</span> <span class="nav-text">微信集成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">2.1.</span> <span class="nav-text">注册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">3.</span> <span class="nav-text">遇到的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#支付宝"><span class="nav-number">3.1.</span> <span class="nav-text">支付宝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信"><span class="nav-number">3.2.</span> <span class="nav-text">微信</span></a></li></ol></li></ol></div>
             
           </div>
         </section>

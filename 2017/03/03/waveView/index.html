@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="xiaoxionglaoshi, iOS" />
+  <meta name="keywords" content="animation," />
 
 
 
@@ -84,15 +84,18 @@
 
 
 
-<meta name="description" content="这是一个神奇的网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小熊老师">
-<meta property="og:url" content="https://xiaoxionglaoshi.github.io/tags/App退款/index.html">
+<meta name="description" content="水波效果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="waveView">
+<meta property="og:url" content="https://xiaoxionglaoshi.github.io/2017/03/03/waveView/index.html">
 <meta property="og:site_name" content="小熊老师">
-<meta property="og:description" content="这是一个神奇的网站">
+<meta property="og:description" content="水波效果">
+<meta property="og:image" content="https://github.com/xiaoxionglaoshi/DNWaveView/blob/master/wave.gif?raw=true">
+<meta property="og:updated_time" content="2017-03-03T08:05:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小熊老师">
-<meta name="twitter:description" content="这是一个神奇的网站">
+<meta name="twitter:title" content="waveView">
+<meta name="twitter:description" content="水波效果">
+<meta name="twitter:image" content="https://github.com/xiaoxionglaoshi/DNWaveView/blob/master/wave.gif?raw=true">
 
 
 
@@ -113,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/tags/App退款/"/>
+  <link rel="canonical" href="https://xiaoxionglaoshi.github.io/2017/03/03/waveView/"/>
 
 
-  <title> 标签: App退款 | 小熊老师 </title>
+  <title> waveView | 小熊老师 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -137,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -258,46 +261,177 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        App退款
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                waveView
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-03T15:39:55+08:00" content="2017-03-03">
+              2017-03-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Swift/" itemprop="url" rel="index">
+                    <span itemprop="name">Swift</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/03/waveView/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/03/waveView/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <p>水波效果<br><a id="more"></a><br>实现该效果主要是运用sin函数的效果</p>
+<p><img src="https://github.com/xiaoxionglaoshi/DNWaveView/blob/master/wave.gif?raw=true" alt="image"></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 开始波动</span></div><div class="line">    @discardableResult <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">wave</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</div><div class="line">        <span class="comment">// 如果正在波动就不重复执行</span></div><div class="line">        <span class="keyword">if</span> waveShapeLayer?.path != <span class="literal">nil</span> &#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="comment">// 创建波纹</span></div><div class="line">        waveShapeLayer = <span class="type">CAShapeLayer</span>()</div><div class="line">        waveShapeLayer?.fillColor = waveColor?.cgColor</div><div class="line">        layer.addSublayer(waveShapeLayer!)</div><div class="line">        </div><div class="line">        waveDisplayLink = <span class="type">CADisplayLink</span>(target: <span class="keyword">self</span>, selector: #selector(currentWave))</div><div class="line">        waveDisplayLink?.add(to: <span class="type">RunLoop</span>.main, forMode: .commonModes)</div><div class="line">        <span class="comment">// 一定时间后自动停止波动</span></div><div class="line">        <span class="keyword">if</span> <span class="type">Double</span>(waveTime!) &gt; <span class="number">0.0</span> &#123;</div><div class="line">            <span class="type">DispatchQueue</span>.main.asyncAfter(deadline: <span class="type">DispatchTime</span>.now() + <span class="type">Double</span>(waveTime!), execute: &#123;</div><div class="line">                <span class="keyword">self</span>.stop()</div><div class="line">            &#125;)</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 停止波动</span></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">stop</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="type">UIView</span>.animate(withDuration: <span class="number">1.0</span>, animations: &#123;</div><div class="line">            <span class="keyword">self</span>.alpha = <span class="number">0</span></div><div class="line">        &#125;) &#123; (finished) <span class="keyword">in</span></div><div class="line">            <span class="keyword">self</span>.waveDisplayLink?.invalidate()</div><div class="line">            <span class="keyword">self</span>.waveDisplayLink = <span class="literal">nil</span></div><div class="line">            <span class="keyword">self</span>.waveShapeLayer?.path = <span class="literal">nil</span></div><div class="line">            <span class="keyword">self</span>.alpha = <span class="number">1</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">currentWave</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="keyword">self</span>.offsetX = (<span class="keyword">self</span>.offsetX ?? <span class="number">0.0</span>) - (<span class="keyword">self</span>.waveSpeed ?? <span class="number">0.0</span>) * (<span class="keyword">self</span>.superview?.frame.size.width)! / <span class="type">CGFloat</span>(<span class="keyword">self</span>.frame.size.width)</div><div class="line">        <span class="keyword">let</span> width: <span class="type">CGFloat</span> = <span class="keyword">self</span>.frame.width</div><div class="line">        <span class="keyword">let</span> height: <span class="type">CGFloat</span> = <span class="keyword">self</span>.frame.height</div><div class="line">        <span class="keyword">let</span> path: <span class="type">CGMutablePath</span> = <span class="type">CGMutablePath</span>()</div><div class="line">        <span class="comment">//设置移动到某点</span></div><div class="line">        path.move(to: <span class="type">CGPoint</span>(x: <span class="type">CGFloat</span>(<span class="number">0</span>), y: <span class="type">CGFloat</span>(height / <span class="number">2</span>)), transform: .identity)</div><div class="line">        <span class="keyword">var</span> y: <span class="type">CGFloat</span> = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="number">0</span>...<span class="type">Int</span>(width) &#123;</div><div class="line">            y = height * sin(<span class="number">0.01</span> * (<span class="keyword">self</span>.angularSpeed! * <span class="type">CGFloat</span>(x) + <span class="keyword">self</span>.offsetX!))</div><div class="line">            path.addLine(to: <span class="type">CGPoint</span>(x: <span class="type">CGFloat</span>(x), y: y), transform: .identity)</div><div class="line">        &#125;</div><div class="line">        path.addLine(to: <span class="type">CGPoint</span>(x: width, y: height), transform: .identity)</div><div class="line">        path.addLine(to: <span class="type">CGPoint</span>(x: <span class="type">CGFloat</span>(<span class="number">0</span>), y: height), transform: .identity)</div><div class="line">        <span class="comment">//闭合路径</span></div><div class="line">        path.closeSubpath()</div><div class="line">        <span class="keyword">self</span>.waveShapeLayer?.path = path</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/xiaoxionglaoshi/DNWaveView" target="_blank" rel="external">源码下载</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016/10/03/内购退款流程/" itemprop="url">
-              
-                <span itemprop="name">内购退款流程</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-03T08:00:00+08:00"
-              content="2016-10-03" >
-          10-03
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/animation/" rel="tag">#animation</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/02/三方支付/" rel="next" title="三方支付">
+                <i class="fa fa-chevron-left"></i> 三方支付
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/03/waveView/"
+     data-title="waveView"
+     data-content=""
+     data-url="https://xiaoxionglaoshi.github.io/2017/03/03/waveView/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -305,6 +439,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/03/waveView/"
+           data-title="waveView" data-url="https://xiaoxionglaoshi.github.io/2017/03/03/waveView/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -324,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -408,6 +559,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -510,6 +672,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

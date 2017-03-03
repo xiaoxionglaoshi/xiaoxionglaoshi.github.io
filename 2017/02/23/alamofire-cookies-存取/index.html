@@ -358,7 +358,7 @@
 <h2 id="读取并重新设置cookies"><a href="#读取并重新设置cookies" class="headerlink" title="读取并重新设置cookies"></a>读取并重新设置cookies</h2><blockquote>
 <p>这一步一般在appdelegate中设置即可</p>
 </blockquote>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> cookieArray = <span class="type">UserDefaults</span>.standard.array(forKey: <span class="string">"alamofire_cookies"</span>) &#123;</div><div class="line">      <span class="keyword">for</span> cookieData <span class="keyword">in</span> cookieArray &#123;</div><div class="line">          <span class="keyword">if</span> <span class="keyword">let</span> dict = cookieData <span class="keyword">as</span>? [<span class="type">HTTPCookiePropertyKey</span> : <span class="type">Any</span>] &#123;</div><div class="line">              <span class="keyword">if</span> <span class="keyword">let</span> cookie = <span class="type">HTTPCookie</span>.<span class="keyword">init</span>(properties : dict) &#123;</div><div class="line">                  <span class="type">HTTPCookieStorage</span>.shared.setCookie(cookie)</div><div class="line">                  <span class="built_in">print</span>(<span class="string">"cookie: <span class="subst">\(cookie)</span>"</span>)</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> cookieArray = <span class="type">UserDefaults</span>.standard.array(forKey: <span class="string">"alamofire_cookies"</span>) &#123;</div><div class="line">      <span class="keyword">for</span> cookieData <span class="keyword">in</span> cookieArray &#123;</div><div class="line">          <span class="keyword">if</span> <span class="keyword">let</span> dict = cookieData <span class="keyword">as</span>? [<span class="type">HTTPCookiePropertyKey</span> : <span class="type">Any</span>] &#123;</div><div class="line">              <span class="keyword">if</span> <span class="keyword">let</span> cookie = <span class="type">HTTPCookie</span>.<span class="keyword">init</span>(properties : dict) &#123;</div><div class="line">                  <span class="type">HTTPCookieStorage</span>.shared.setCookie(cookie)</div><div class="line">                  <span class="built_in">print</span>(<span class="string">"cookie: \(cookie)"</span>)</div><div class="line">              &#125;</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>读取到的cookies样式</p>
 </blockquote>
@@ -495,7 +495,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">37</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -512,7 +512,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
